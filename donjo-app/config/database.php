@@ -78,10 +78,10 @@ $konfigurasi_db = KonfigurasiDatabase();
 if(is_file($konfigurasi_db)) {
   include($konfigurasi_db);
 }else{
-	$db['default']['hostname'] = 'localhost';
+	$db['default']['hostname'] = 'sid_mysql';
 	$db['default']['username'] = 'root';
-	$db['default']['password'] = '';
-	$db['default']['database'] = 'opensid';
+	$db['default']['password'] = 'fkd91ok3fngncx';
+	$db['default']['database'] = 'sid';
 }
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';

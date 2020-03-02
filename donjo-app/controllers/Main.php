@@ -47,7 +47,7 @@ class Main extends CI_Controller {
 		}
 		else
 		{
-			redirect('first');
+			redirect('siteman');
 		}
 	}
 }
