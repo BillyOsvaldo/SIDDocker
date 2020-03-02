@@ -41,4 +41,9 @@ info.php
 **/.DS_Store
 mitra
 
+# Jangan upload nginx, mysql dan app
+sid_mysql
+sid_nginx
+
+
 
