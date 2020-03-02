@@ -4,8 +4,8 @@ backup/
 assets/sync/
 # Jangan simpan isi folder logo. Isinya khusus desa, kecuali
 # file logo contoh yg tersedia dalam release sid304 inti.
-assets/files/logo/*
-!assets/files/logo/home.png
+# assets/files/logo/*
+# !assets/files/logo/home.png
 # Jangan simpan isi folder foto pengguna. Isinya khusus desa, kecuali
 # file foto contoh yg tersedia dalam release sid304 inti.
 assets/files/user_pict/*
@@ -30,9 +30,9 @@ assets/files/gis/garis/*
 assets/files/dokumen/*
 !assets/files/dokumen/index.html
 # Jangan simpan isi folder desa. Isinya khusus desa.
-desa/*
-surat/arsip/
-!surat/arsip/.keep
+# desa/*
+# surat/arsip/
+# !surat/arsip/.keep
 generatedata-3.2.4/
 coba/
 *.log
