@@ -30,9 +30,9 @@ assets/files/gis/garis/*
 assets/files/dokumen/*
 !assets/files/dokumen/index.html
 # Jangan simpan isi folder desa. Isinya khusus desa.
-# desa/*
-# surat/arsip/
-# !surat/arsip/.keep
+desa/*
+surat/arsip/
+!surat/arsip/.keep
 generatedata-3.2.4/
 coba/
 *.log
@@ -42,8 +42,8 @@ info.php
 mitra
 
 # Jangan upload nginx, mysql dan app
-sid_mysql
-sid_nginx
+sid_mysql/*
+sid_nginx/*
 
 
 
