@@ -4,10 +4,12 @@ RUN mkdir -p /app
 WORKDIR /app
 
 COPY desa /app/desa
+COPY vendor /app/vendor
 COPY themes /app/themes
 COPY donjo-app /app/donjo-app
 COPY assets /app/assets
 COPY surat /app/surat
+COPY securimage /app/securimage
 # COPY gulpfile.js /app/gulpfile.js
 # COPY src         /app/src
 
@@ -31,6 +33,9 @@ RUN apt -qq update && \
     rm -rf /var/lib/apt/lists/*
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt -qq install -y nodejs
+
+# install php-gd
+RUN docker-php-ext-install gd
 
 # install php mysql
 RUN docker-php-ext-install mysqli zip

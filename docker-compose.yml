@@ -22,7 +22,9 @@ services:
       - ./index.php:/app/index.php
       - ./system:/app/system
       - ./assets:/app/assets
+      - ./vendor:/app/vendor
       - ./desa:/app/desa
+      - ./securimage:/app/securimage
       - ./themes:/app/themes
       - ./donjo-app/cache:/app/donjo-app/cache
       - ./donjo-app/config:/app/donjo-app/config
