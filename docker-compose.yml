@@ -3,9 +3,9 @@ version: '3'
 ## Summary
 
 # network:
-#   app on port 8011
-#   phpmyadmin on port 8012
-#   mysql on port 8013
+#   app on port 8001
+#   phpmyadmin on port 8002
+#   mysql on port 8003
 
 # auth:
 # mysql:
@@ -13,11 +13,11 @@ version: '3'
 #   pw: fkd91ok3fngncx
 
 services:
-  sid_app_karangjambe:
-    container_name: sid_app_karangjambe
+  sid_app:
+    container_name: sid_app
     build: .
     depends_on:
-      - sid_mysql_karangjambe
+      - sid_mysql
     volumes:
       - ./index.php:/app/index.php
       - ./system:/app/system
@@ -42,39 +42,39 @@ services:
       - ./donjo-app/views:/app/donjo-app/views
       
     environment:
-      PHP_POOL_FILE: ./sid_app_karangjambe/pool.d/20-system.pool.conf
-  sid_nginx_karangjambe:
-    container_name: sid_nginx_karangjambe
+      PHP_POOL_FILE: ./sid_app/pool.d/20-system.pool.conf
+  sid_nginx:
+    container_name: sid_nginx
     image: nginx:latest
     expose:
       - 80
     ports:
-      - '8011:80'
+      - '8001:80'
     volumes:
-      - ./sid_nginx_karangjambe/conf.d/sid.conf:/etc/nginx/conf.d/default.conf
+      - ./sid_nginx/conf.d/sid.conf:/etc/nginx/conf.d/default.conf
       - ./:/app
     links:
-      - _karangjambe_karangjambe
-  sid_mysql_karangjambe:
-    container_name: sid_mysql_karangjambe
+      - sid_app
+  sid_mysql:
+    container_name: sid_mysql
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: fkd91ok3fngncx
       MYSQL_DATABASE: sid
       TZ: 'Asia/Jakarta'
     volumes:
-      - ./sid_mysql_karangjambe/initdb:/docker-entrypoint-initdb.d
+      - ./sid_mysql/initdb:/docker-entrypoint-initdb.d
       - sid_persistent:/var/lib/mysql
     ports:
-      - '8013:3306'
+      - '8003:3306'
   sid_phpmyadmin:
     container_name: sid_phpmyadmin
     image: phpmyadmin/phpmyadmin
     environment:
-      PMA_HOST: sid_mysql_karangjambe
+      PMA_HOST: sid_mysql
     depends_on:
-      - sid_mysql_karangjambe
+      - sid_mysql
     ports:
-      - '8012:80'
+      - '8002:80'
 volumes:
   sid_persistent:
