@@ -13,11 +13,11 @@ version: '3'
 #   pw: fkd91ok3fngncx
 
 services:
-  sid_app:
-    container_name: sid_app
+  sid_app_karangjambe:
+    container_name: sid_app_karangjambe
     build: .
     depends_on:
-      - sid_mysql
+      - sid_mysql_karangjambe
     volumes:
       - ./index.php:/app/index.php
       - ./system:/app/system
@@ -42,28 +42,28 @@ services:
       - ./donjo-app/views:/app/donjo-app/views
       
     environment:
-      PHP_POOL_FILE: ./sid_app/pool.d/20-system.pool.conf
-  sid_nginx:
-    container_name: sid_nginx
+      PHP_POOL_FILE: ./sid_app_karangjambe/pool.d/20-system.pool.conf
+  sid_nginx_karangjambe:
+    container_name: sid_nginx_karangjambe
     image: nginx:latest
     expose:
       - 80
     ports:
       - '8011:80'
     volumes:
-      - ./sid_nginx/conf.d/sid.conf:/etc/nginx/conf.d/default.conf
+      - ./sid_nginx_karangjambe/conf.d/sid.conf:/etc/nginx/conf.d/default.conf
       - ./:/app
     links:
-      - sid_app
-  sid_mysql:
-    container_name: sid_mysql
+      - _karangjambe_karangjambe
+  sid_mysql_karangjambe:
+    container_name: sid_mysql_karangjambe
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: fkd91ok3fngncx
       MYSQL_DATABASE: sid
       TZ: 'Asia/Jakarta'
     volumes:
-      - ./sid_mysql/initdb:/docker-entrypoint-initdb.d
+      - ./sid_mysql_karangjambe/initdb:/docker-entrypoint-initdb.d
       - sid_persistent:/var/lib/mysql
     ports:
       - '8013:3306'
@@ -71,9 +71,9 @@ services:
     container_name: sid_phpmyadmin
     image: phpmyadmin/phpmyadmin
     environment:
-      PMA_HOST: sid_mysql
+      PMA_HOST: sid_mysql_karangjambe
     depends_on:
-      - sid_mysql
+      - sid_mysql_karangjambe
     ports:
       - '8012:80'
 volumes:
