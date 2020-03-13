@@ -1,10 +1,10 @@
 <div class="content-wrapper">
 	<section class="content-header">
-		<h1>Surat Domisili Usaha Non Warga</h1>
+		<h1>Surat Keterangan</h1>
 		<ol class="breadcrumb">
 			<li><a href="<?= site_url('hom_desa/about')?>"><i class="fa fa-dashboard"></i> Home</a></li>
 			<li><a href="<?= site_url('surat')?>"> Daftar Cetak Surat</a></li>
-			<li class="active">Surat Domisili Usaha Non Warga</li>
+			<li class="active">Surat Keterangan</li>
 		</ol>
 	</section>
 	<section class="content">
@@ -100,44 +100,12 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="nama_usaha"  class="col-sm-3 control-label">Nama Usaha / Jenis Usaha</label>
+								<label for="nama_usaha"  class="col-sm-3 control-label">Keterangan</label>
 								<div class="col-sm-4">
-									<input id="nama_usaha" class="form-control input-sm required" type="text" placeholder="Nama Usaha" name="nama_usaha">
-								</div>
-								<div class="col-sm-4">
-									<input id="usaha" class="form-control input-sm required" type="text" placeholder="Jenis Usaha" name="usaha">
+									<input id="nama_usaha" class="form-control input-sm required" type="text" placeholder="Nama Usaha" name="keterangan">
 								</div>
 							</div>
-							<div class="form-group">
-								<label for="akta_usaha"  class="col-sm-3 control-label">Nomor Akta / Tahun / Notaris</label>
-								<div class="col-sm-3">
-									<input id="akta_usaha" class="form-control input-sm required" type="text" placeholder="Nomor Akta" name="akta_usaha">
-								</div>
-								<div class="col-sm-2">
-									<input id="akta_tahun" class="form-control input-sm required" type="text" placeholder="Tahun" name="akta_tahun">
-								</div>
-								<div class="col-sm-3">
-									<input id="notaris" class="form-control input-sm required" type="text" placeholder="Notaris" name="notarisn">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="bangunan"  class="col-sm-3 control-label">Jenis Bangunan / Peruntukan Bangunan / Status Bangunan</label>
-								<div class="col-sm-3">
-									<input id="bangunan" class="form-control input-sm required" type="text" placeholder="Jenis Bangunan" name="bangunan">
-								</div>
-								<div class="col-sm-3">
-									<input id="peruntukan_bangunan" class="form-control input-sm required" type="text" placeholder="Peruntukan Bangunan" name="peruntukan_bangunan">
-								</div>
-								<div class="col-sm-2">
-									<input id="status_bangunan" class="form-control input-sm required" type="text" placeholder="Status Bangunan" name="status_bangunan">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="alamat_usaha"  class="col-sm-3 control-label">Alamat Usaha</label>
-								<div class="col-sm-8">
-									<input  id="alamat_usaha" class="form-control input-sm required" type="text" placeholder="Alamat Usaha" name="alamat_usaha">
-								</div>
-							</div>
+							
 							<?php include("donjo-app/views/surat/form/_pamong.php"); ?>
 						</form>
 					</div>
